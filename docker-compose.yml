@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./backend/.env
+    # Chromium needs extra shared memory in Docker
+    shm_size: "1gb"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:8080"
+    environment:
+      - BACKEND_URL=http://localhost:8080
+    depends_on:
+      - backend

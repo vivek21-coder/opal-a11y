@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Opal — Voice-controlled accessibility assistant for the web" />
+    <meta name="theme-color" content="#080c14" />
+    <title>Opal</title>
+    <script>
+      (function(){var t=localStorage.getItem('opal-theme');if(!t||t==='system'){t=matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t);if(t==='light'){document.querySelector('meta[name=theme-color]').content='#f8f9fc'}})();
+    </script>
+    <script>
+      window.BACKEND_URL = "__BACKEND_URL__";
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

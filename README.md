@@ -2,7 +2,7 @@
 
 Opal is a voice-controlled accessibility agent that helps visually impaired users browse, understand, and interact with any website through natural speech.
 
-Say something like _"Open Wikipedia"_ or _"विकिपीडिया खोलो"_ and Opal navigates to the page, shows it in a live viewport, reads the content aloud, and lets you keep interacting hands-free.
+Say something like _"Open Wikipedia"_, _"Abrir Wikipedia"_ or _"विकिपीडिया खोलो"_ and Opal navigates to the page, shows it in a live viewport, reads the content aloud, and lets you keep interacting hands-free.
 
 I started this as a side project to see how far a fully voice-driven browsing experience could go using current speech and LLM APIs. It has since grown into a small full-stack app with real-time streaming, browser automation, and support for ten languages.
 

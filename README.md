@@ -23,16 +23,16 @@ I started this as a side project to see how far a fully voice-driven browsing ex
 ## Architecture
 
 ```
-┌─────────────────────┐         WebSocket          ┌──────────────────────────┐
-│                     │  ◄───────────────────────►  │                          │
-│   Frontend          │   STATUS / SCREENSHOT /     │   Backend (FastAPI)      │
-│   React 19 + Vite   │   STREAM_* / TTS_CHUNK /    │                          │
+┌─────────────────────┐         WebSocket            ┌──────────────────────────┐
+│                     │  ◄───────────────────────►   │                          │
+│   Frontend          │   STATUS / SCREENSHOT /      │   Backend (FastAPI)      │
+│   React 19 + Vite   │   STREAM_* / TTS_CHUNK /     │                          │
 │                     │   STT_RESULT / ERROR         │   ┌──────────────────┐   │
 │   - Live viewport   │                              │   │  Gemini LLM      │   │
 │   - Chat sidebar    │   CHAT_MSG / STT_AUDIO /     │   │  (streaming)     │   │
-│   - Voice controls  │   SET_LANGUAGE / NEW_CHAT     │   └──────────────────┘   │
+│   - Voice controls  │   SET_LANGUAGE / NEW_CHAT    │   └──────────────────┘   │
 │   - TTS playback    │                              │   ┌──────────────────┐   │
-│   - Language picker  │                              │   │  Groq Whisper    │   │
+│   - Language picker │                              │   │  Groq Whisper    │   │
 │   - i18n (10 langs) │                              │   │  (STT)           │   │
 │                     │                              │   └──────────────────┘   │
 └─────────────────────┘                              │   ┌──────────────────┐   │
@@ -321,8 +321,6 @@ The frontend targets WCAG 2.2 Level AA:
 Issues and pull requests are welcome. If you want to add a language, the UI strings live in [frontend/src/i18n.js](frontend/src/i18n.js) and the voice, locale, and TTS mappings are in [backend/main.py](backend/main.py).
 
 ## Acknowledgements
-
-Thanks to Saurabh Mallik for contributing to an early version of this project.
 
 Opal is built on top of a lot of excellent open-source and free-tier work, including Gemini, Groq Whisper, Edge TTS, Playwright, and browser-use.
 
